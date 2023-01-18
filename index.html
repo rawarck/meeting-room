@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meeting Room</title>
 </head>
+
 <body>
-    meetingroom
+    <button id="sign-in-with-microsoft">sign in</button>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getAuth, signInWithPopup, OAuthProvider } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+
+        // Initialize Firebase
+        const config = {
+            apiKey: "AIzaSyAlvoGXQ76-Y2p-zTVZ3mkMxO92R00Mij0",
+            authDomain: "meeting-room-f404f.firebaseapp.com",
+            projectId: "meeting-room-f404f",
+            storageBucket: "meeting-room-f404f.appspot.com",
+            messagingSenderId: "531009823218",
+            appId: "1:531009823218:web:e8a2b3d126e3b34a1a0b6b"
+        };
+
+        const app = initializeApp(config);
+
+        // Configure Microsoft as a provider
+        const provider = new OAuthProvider('microsoft.com');
+        const auth = getAuth();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // User is signed in.
+                // IdP data available in result.additionalUserInfo.profile.
+
+                // Get the OAuth access token and ID Token
+                const credential = OAuthProvider.credentialFromResult(result);
+                const accessToken = credential.accessToken;
+                const idToken = credential.idToken;
+            })
+            .catch((error) => {
+                // Handle error.
+            });
+    </script>
 </body>
+
 </html>
