@@ -19,6 +19,7 @@
         const config = {
             apiKey: "AIzaSyAlvoGXQ76-Y2p-zTVZ3mkMxO92R00Mij0",
             authDomain: "meeting-room-f404f.firebaseapp.com",
+            databaseURL: "https://meeting-room-f404f-default-rtdb.europe-west1.firebasedatabase.app",
             projectId: "meeting-room-f404f",
             storageBucket: "meeting-room-f404f.appspot.com",
             messagingSenderId: "531009823218",
@@ -46,7 +47,7 @@
 
         // Import the Firebase SDK
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-        import { getAuth } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+        import { getAuth, OAuthProvider } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
         // Initialize Firebase
         const firebaseConfig = {
