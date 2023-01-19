@@ -10,7 +10,6 @@
 
 <body>
     <button id="sign-in-with-microsoft">sign in</button>
-    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
 
     <script type="module">
         /*import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
@@ -59,7 +58,7 @@
             messagingSenderId: "531009823218",
             appId: "1:531009823218:web:e8a2b3d126e3b34a1a0b6b"
         };
-        firebase.initializeApp(firebaseConfig);
+        const app = initializeApp(firebaseConfig);
 
         // Initialize the Microsoft provider
         const microsoftProvider = new firebase.auth.OAuthProvider('microsoft.com');
