@@ -9,9 +9,10 @@
 </head>
 
 <body>
+    <button onclick="signInWithPopup()"></button>
 
     <script type="module">
-        /*import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
         import { getAuth, signInWithPopup, OAuthProvider } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
         // Initialize Firebase
@@ -42,42 +43,7 @@
             })
             .catch((error) => {
                 // Handle error.
-            });*/
-
-        // Import the Firebase SDK
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-        import { getAuth, signInWithPopup, OAuthProvider } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
-
-        // Initialize Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyAlvoGXQ76-Y2p-zTVZ3mkMxO92R00Mij0",
-            authDomain: "meeting-room-f404f.firebaseapp.com",
-            databaseURL: "https://meeting-room-f404f-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "meeting-room-f404f",
-            storageBucket: "meeting-room-f404f.appspot.com",
-            messagingSenderId: "531009823218",
-            appId: "1:531009823218:web:e8a2b3d126e3b34a1a0b6b"
-        };
-        const app = initializeApp(firebaseConfig);
-
-        // Initialize the Microsoft provider
-        const microsoftProvider = new OAuthProvider('microsoft.com');
-
-        // Sign in with Microsoft
-        const signInWithMicrosoft = async () => {
-            try {
-                // Start the sign-in process
-                const result = await firebase.auth().signInWithPopup(microsoftProvider);
-                console.log(result);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        var button = document.createElement("button");
-        button.innerHTML = "Sign in with Microsoft";
-        button.onclick = signInWithMicrosoft;
-        document.body.appendChild(button);
+            });
     </script>
 </body>
 
