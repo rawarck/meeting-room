@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <button onclick="signInWithPopup()"></button>
+    <button onclick="signInWithPopup()">sign in</button>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
@@ -30,7 +30,7 @@
 
         // Configure Microsoft as a provider
         const provider = new OAuthProvider('microsoft.com');
-        const auth = getAuth(app);
+        const auth = getAuth();
         signInWithPopup(auth, provider)
             .then((result) => {
                 // User is signed in.
