@@ -73,8 +73,12 @@
                 console.error(error);
             }
         }
+
+        var button = document.createElement("button");
+        button.innerHTML = "Sign in with Microsoft";
+        button.onclick = signInWithMicrosoft;
+        document.body.appendChild(button);
     </script>
-    <button onclick="signInWithMicrosoft()">Sign in with Microsoft</button>
 </body>
 
 </html>
